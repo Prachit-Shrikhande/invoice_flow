@@ -1,0 +1,216 @@
+🧠 ROLE & OBJECTIVE
+
+You are a senior full-stack engineer building a production-ready web application called:
+
+"InvoiceFlow" – A quotation, invoice, PO, and receipt generator for businesses
+
+The system must be:
+
+Cleanly architected
+Scalable (future upgrade to PostgreSQL)
+Modular
+Production-grade (not a hacky demo)
+🏗️ TECH STACK
+Backend:
+FastAPI (Python)
+SQLite (initial DB)
+SQLAlchemy ORM
+Pydantic for validation
+Uvicorn server
+Frontend:
+React (Vite)
+Tailwind CSS
+Axios for API calls
+React Router
+File Handling:
+Store uploaded images (logo, signature) locally (/uploads)
+Generate PDFs dynamically
+PDF Generation:
+Use WeasyPrint or ReportLab (prefer WeasyPrint with HTML templates)
+QR Code:
+Generate UPI QR using qrcode Python library
+🧩 CORE FEATURES
+1. AUTH SYSTEM
+Pages:
+Welcome Page (marketing + slides)
+Sign Up
+Sign In
+Requirements:
+JWT-based authentication
+Password hashing (bcrypt)
+Protected routes
+2. BUSINESS SETUP (FIRST LOGIN FLOW)
+Fields:
+Logo (image upload)
+Signature (image upload)
+Business Name
+Contact Name
+Email
+Phone
+Address Line 1, 2
+Additional Info
+Tax Label (GST/PAN/VAT/custom)
+Tax Number
+State, Country
+Bank Details:
+Account Name
+Account Number
+Bank Name
+UPI ID → Generate QR code
+Date Format
+Currency
+Behavior:
+Save as BusinessProfile
+Editable anytime
+3. HOME DASHBOARD
+Top Cards:
+Business
+Customers
+Products
+Terms
+Discover Section:
+Make Quotation
+Quotation List
+Make Invoice
+Invoice List
+Purchase Orders
+Receipts
+4. CUSTOMER MODULE
+Fields:
+Name
+Company Name
+Email
+Mobile
+Address (3 lines)
+GSTIN
+State
+Shipping Address
+Features:
+CRUD operations
+Search/filter
+5. PRODUCT MODULE
+Fields:
+Product Name
+Price
+Unit (SET, KG, PCS, etc.)
+GST %
+Description
+HSN Code
+Features:
+CRUD
+Selectable in invoice/quotation
+6. TERMS & CONDITIONS MODULE
+Types:
+Quotation
+Invoice
+Purchase Order
+Fields:
+Type
+Content (text)
+7. DOCUMENT GENERATION MODULE
+Types:
+Quotation
+Invoice
+Purchase Order
+Receipt
+🔹 COMMON COMPONENTS
+Customer Selection:
+Modal popup
+Select existing or create new
+Product Selection:
+Add multiple products
+Quantity input
+Auto total calculation
+Other Charges:
+Add amount
+Taxable toggle
+Terms:
+Select or add new
+🔹 INVOICE EXTRA:
+Paid Info:
+Paid Date
+Amount
+Notes
+8. PDF GENERATION
+Requirements:
+Clean professional layout
+Include:
+Logo
+Signature
+Business Info
+Customer Info
+Product Table
+Taxes
+Total
+Terms
+UPI QR Code
+Output:
+Preview in browser
+Download PDF
+🗄️ DATABASE DESIGN
+
+Create proper normalized schema:
+
+Tables:
+users
+business_profiles
+customers
+products
+terms
+quotations
+invoices
+purchase_orders
+receipts
+line_items (common table)
+🔐 SECURITY
+JWT authentication
+Input validation everywhere
+File upload validation
+CORS setup
+
+🚀 API DESIGN
+
+Create RESTful endpoints:
+
+🧠 BUSINESS LOGIC
+Auto calculate:
+Subtotal
+GST
+Total
+Currency formatting
+Date formatting based on user settings
+🧪 TESTING
+Basic unit tests for:
+Auth
+Invoice calculation
+PDF generation
+🎯 UX REQUIREMENTS
+Clean, minimal UI
+Fast interactions
+Modal-based flows
+Avoid page reloads
+📦 DELIVERABLES
+Fully working backend
+Fully working frontend
+API integration
+PDF generation working
+QR code working
+Sample data
+README with setup instructions
+⚡ EXECUTION STRATEGY
+
+Build in this order:
+
+Auth system
+Business profile
+Customers & Products
+Invoice creation
+PDF generation
+Remaining modules
+
+🚨 IMPORTANT RULES
+Do NOT write pseudo code
+Write complete working code
+Keep code modular
+Follow best practices
+Add comments only where necessary
